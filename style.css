@@ -1,0 +1,176 @@
+/*-------- IMPORTED FONTS --------*/
+@import url('https://fonts.googleapis.com/css2?family=Caramel&family=Poppins:wght@400;500;600&display=swap');
+/*-------- VARIABLES --------*/
+:root {
+    --main-color: #e74c3c;
+    --dark-color: #2d3436;
+    --light-grey: #bdc3c7;
+    --cloudy: #ecf0f1;
+    --white-color: #fff;
+    --poppins-font: 'Poppins', sans-serif;
+    --caramel-font: 'Caramel', cursive;
+}
+/*-------- LAYOUT --------*/
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body{
+  
+  background: var(--white-color);
+  color: var(--dark-color);
+}
+/*-------- NAVIGATION BAR --------*/
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 4rem;
+    width: 100vw;
+    position: fixed;
+    
+}
+.logo {
+    font-family: var(--caramel-font);
+    text-decoration: none;
+    color: var(--dark-color);
+    font-size: 1.75rem;
+    font-weight: 800;
+}
+.logo span {
+    font-family: var(--caramel-font);
+    color: var(--main-color);
+}
+.github-url {
+    text-decoration: none;
+    font-size: 2rem;
+    color: var(--dark-color);
+    transition: 0.2s;
+}
+.github-url:hover {
+    color: var(--main-color);
+}
+
+/*-------- IMAGE RESIZE --------*/
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  position: relative;
+  flex-direction: column;
+}
+.wrapper{
+  width: 450px;
+  height: 288px;
+  padding: 30px;
+  border-radius: 9px;
+  transition: height 0.2s ease;
+}
+.wrapper.active{
+  height: 537px;
+}
+.wrapper .upload-box{
+  height: 225px;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 5px;
+  border: 2px dashed var(--light-grey);
+}
+.wrapper.active .upload-box{
+  border: none;
+}
+
+.upload-box p{
+  font-size: 1.06rem;
+  margin-top: 20px;
+}
+.wrapper.active .upload-box p{
+  display: none;
+}
+.wrapper.active .upload-box img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+.wrapper .content{
+  opacity: 0;
+  margin-top: 28px;
+  pointer-events: none;
+}
+.wrapper.active .content{
+  opacity: 1;
+  pointer-events: auto;
+  transition: opacity 0.5s 0.05s ease;
+}
+.content .row{
+  display: flex;
+  justify-content: space-between;
+}
+.content .row .column{
+  width: calc(100% / 2 - 15px);
+}
+.row .column label{
+  font-size: 1.06rem;
+}
+.sizes .column input{
+  width: 100%;
+  height: 49px;
+  outline: none;
+  margin-top: 7px;
+  padding: 0 15px;
+  font-size: 1.06rem;
+  border-radius: 4px;
+  border: 1px solid var(--light-grey);
+}
+.sizes .column input:focus{
+  padding: 0 14px;
+  border: 2px solid var(--main-color);
+}
+.content .checkboxes{
+  margin-top: 20px;
+}
+.checkboxes .column{
+  display: flex;
+  align-items: center;
+}
+.checkboxes .column input{
+  width: 17px;
+  height: 17px;
+  margin-right: 9px;
+  accent-color: var(--main-color);
+}
+.content .download-btn{
+  width: 100%;
+  color: var(--white-color);
+  outline: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.06rem;
+  border-radius: 5px;
+  padding: 15px 0;
+  margin: 30px 0 10px;
+  background: var(--main-color);
+  text-transform: uppercase;
+}
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: var(--cloudy);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 6rem;
+}
+footer a {
+    text-decoration: none;
+}
+footer a, footer i {
+    color: var(--main-color);
+}
